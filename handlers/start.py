@@ -38,6 +38,3 @@ async def vacancies_handler(callback: types.CallbackQuery):
     await callback.message.answer("Тут будут вакансии")
 
 
-@start_router.message(F.text == "Детектив")
-async def detective_handler(message: types.Message):
-    await message.answer("Книги жанра Детектив")

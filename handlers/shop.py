@@ -36,10 +36,14 @@ async def genres_handler(message: types.Message):
         await message.answer(f"Книг жанра {genre} нет в продаже")
         return
 
-    # pprint(books)
+    pprint(books)
     await message.answer(
         f"Книги жанра {genre}: ",
         reply_markup=kb
     )
     for book in books:
-        await message.answer(f"Название: {book[1]}\nЦена: {book[3]} сом")
+        cover = types.FSInputFile(book.get('cover'))
+        await message.answer_photo(
+            photo=cover,
+            caption=f"Название: {book.get('name')}\nЦена: {book.get('price')} сом"
+        )

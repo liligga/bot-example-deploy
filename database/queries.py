@@ -45,8 +45,8 @@ class Queries:
     POPULATE_BOOKS = """
     INSERT INTO books(name, author, price, cover, genre_id) VALUES 
     ('Тень в зеркале', 'Алексей Смирнов', 2000, 'images/book1.jpg', 1),
-    ('Хроники Серебряного леса', 'Елена Волкова', 2500, 'images/book2.jpg', 2),
+    ('Хроники Серебряного леса', 'Елена Волкова', 2500, 'images/book2.webp', 2),
     ('Квантовый разлом', 'Игорь Петров', 1400, 'images/book3.jpg', 3),
-    ('Осенние письма', 'Мария Соколова', 2450, 'images/book4.jpg', 4),
-    ('Код мести', 'Сергей Антонов', 1239, 'images/book1.jpg', 1)
+    ('Осенние письма', 'Мария Соколова', 2450, 'images/book2.webp', 4),
+    ('Код мести', 'Сергей Антонов', 1239, 'images/book3.jpg', 1)
     """

@@ -25,11 +25,17 @@ class Database:
 
             conn.commit()
 
-    def fetch(self, query: str, params: tuple = None):
+    def fetch(self, query: str, params: tuple = None, fetchall: bool = True):
         with sqlite3.connect(self.path) as conn:
             result = conn.execute(query, params)
+            result.row_factory = sqlite3.Row
 
-            return result.fetchall()
+            if fetchall:
+                to_return = result.fetchall()
+                return [dict(row) for row in to_return]
+            else:
+                to_return = result.fetchone()
+                return dict(to_return)
 
 
 
